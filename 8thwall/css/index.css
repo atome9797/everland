@@ -1,0 +1,58 @@
+.wrap {
+  z-index: 10;
+}
+#unity-container {
+  width: 100%;
+  height: 100%;
+}
+#unity-canvas-container {
+  width: 100%;
+  height: 100%;
+}
+#unity-canvas {
+  width: 100%;
+  height: 100%;
+}
+#captureImg {
+  width: 100%;
+  height: 100%;
+  display: none;
+  z-index: 10;
+  position: absolute;
+  background: white;
+}
+#captureVideo {
+  width: 100%;
+  height: 100%;
+  display: none;
+  z-index: 10;
+  position: absolute;
+  background: white;
+}
+#UnitySceneFrame {
+  width: 100%;
+  height: 100%;
+}
+#BackgroundImg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  object-fit: fill;
+}
+.videoBtn {
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#UnityAssetLoading {
+  z-index: 50;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+.load_ani {
+  display: none;
+  z-index: 100;
+}

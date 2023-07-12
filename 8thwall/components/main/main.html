@@ -1,0 +1,210 @@
+<!-- wrap 시작위치 -->
+<div class="wrap" style="pointer-events: none">
+  <!-- 캡처 메뉴 -->
+  <div class="top_sect" style="pointer-events: auto">
+    <div id="unity-container" class="unity-desktop" style="position: absolute">
+      <div id="previewContainer">
+        <div class="top-bar">
+          <div class="preview-box">
+            <img id="imagePreview" style="max-width: 80vw !important" />
+            <video
+              id="videoPreview"
+              style="max-width: 80vw !important"
+              playsinline
+              loop
+            ></video>
+            <video
+              id="BackgroundVideo"
+              crossorigin="anonymous"
+              style="width: 0; height: 0"
+              muted
+              playsinline
+            ></video>
+            <video
+              id="BackgroundVideoEvent"
+              crossorigin="anonymous"
+              style="width: 0; height: 0"
+              loop
+              muted
+              playsinline
+            ></video>
+            <button id="toggleMuteButton" class="style-reset icon-button">
+              <img
+                id="muteButtonImg"
+                src="//cdn.8thwall.com/web/img/mediarecorder/sound-on-v1.svg"
+              />
+            </button>
+          </div>
+        </div>
+        <div class="bottom-bar" style="background: white; margin: 0 0vmin">
+          <div class="finalize-container" style="top: 0% !important">
+            <div id="finalizeText"></div>
+            <progress id="finalizeProgressBar" value="0" max="100"></progress>
+          </div>
+          <button
+            id="closePreviewButton"
+            class="style-reset icon-button"
+            style="right: 82% !important"
+          >
+            <img src="../../assets/Images/Icons/icon_return3x.png" />
+          </button>
+          <button id="downloadButton" class="style-reset icon-button">
+            <img src="../../assets/Images/Icons/icon_save3x.png" />
+          </button>
+          <button
+            id="ActionButton"
+            class="style-reset icon-button"
+            style="right: 0% !important; position: absolute"
+          >
+            <img src="../../assets/Images/Icons/icon_share3x.png" />
+          </button>
+        </div>
+      </div>
+      <div
+        class="konvajs-content"
+        role="presentation"
+        style="position: relative; user-select: none; width: 100%; height: 100%"
+      >
+        <canvas
+          id="unity-canvas"
+          style="
+            padding: 0px;
+            margin: 0px;
+            border: 0px;
+            background: transparent;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: 100%;
+            display: block;
+          "
+        >
+        </canvas>
+      </div>
+    </div>
+    <!-- 로딩 애니메이션 -->
+    <div class="load_ani"></div>
+    <div class="randomBox_toast_msg"></div>
+    <div class="summerEvent_toast_msg"></div>
+    <!-- 토스트 메세지 -->
+    <div class="toast_msg">
+      <p id="toast_msg_text">동영상이 저장되었습니다.</p>
+    </div>
+    <!-- 녹화 모드 -->
+    <div class="wrapMode" style="display: none">
+      <div class="timer_wrap recordBeforeTimer">00:00:00</div>
+      <div class="timer_wrap pause recordAfterTimer" style="visibility: hidden">
+        00:00:00
+      </div>
+      <!-- 동영상 촬영 영역 (촬영 중) -->
+      <div id="recorder" class="recorder-container">
+        <svg viewBox="0 0 38 38" class="progress-container">
+          <circle class="progress-track" r="16" cx="19" cy="19"></circle>
+          <circle
+            id="progressBar"
+            class="progress-bar"
+            r="16"
+            cx="19"
+            cy="19"
+          ></circle>
+          <circle class="loading-circle" r="16" cx="19" cy="19"></circle>
+        </svg>
+        <button id="recorder-button" class="style-reset">Record</button>
+      </div>
+      <div id="flashElement" class="flash-element"></div>
+    </div>
+    <!--녹화 모드 end -->
+    <div
+      style="display: block; position: absolute; left: 0; bottom: 0; right: 0"
+      class="wrapMode"
+    >
+      <!-- 버튼 영역 (저장 및 공유) -->
+      <div class="cont_row captureShareMode">
+        <div class="btn_area">
+          <div>
+            <button
+              class="video_chg_btn pictureMode"
+              style="display: block"
+            ></button>
+            <button
+              class="picture_chg_btn videoMode"
+              style="display: none"
+            ></button>
+          </div>
+          <div>
+            <button
+              class="picture_shoot_btn pictureMode"
+              style="display: block"
+            >
+              <i></i>
+            </button>
+            <button class="video_shoot_btn videoMode" style="display: none">
+              <i></i>
+            </button>
+          </div>
+          <div>
+            <button
+              class="arrow_down_btn button_position"
+              style="display: block"
+            ></button>
+            <button
+              class="menu_chg_btn_bottom button_position"
+              style="display: none"
+            ></button>
+          </div>
+        </div>
+      </div>
+      <!-- 필터 영역 하단 -->
+      <div class="cont_row select_menu" style="display: block">
+        <div class="filter_area">
+          <div class="DefaultCategoryMenu" value="Pubao">
+            <p class="img">
+              <img
+                src="../../assets/Images/Thumbnails/Pubao.png"
+                alt="샘플 이미지"
+              />
+            </p>
+            <p class="tit">푸바오로 변신</p>
+          </div>
+          <div class="DefaultCategoryMenu" value="LennyAndFriends">
+            <p class="img">
+              <img
+                src="../../assets/Images/Thumbnails/LennyAndFriends.png"
+                alt="샘플 이미지"
+              />
+            </p>
+            <p class="tit">레니와 친구들</p>
+          </div>
+          <div class="DefaultCategoryMenu" value="SummerEverland">
+            <p class="img">
+              <img
+                src="../../assets/Images/Thumbnails/SummerEverland.png"
+                alt="샘플 이미지"
+              />
+            </p>
+            <p class="tit">썸머 에버랜드</p>
+          </div>
+          <div class="DefaultCategoryMenu" value="Random">
+            <p class="img">
+              <img
+                src="../../assets/Images/Thumbnails/Random.png"
+                alt="샘플 이미지"
+              />
+            </p>
+            <p class="tit">이건 즐겨야 해</p>
+          </div>
+          <div class="DefaultCategoryMenu" value="Bombman">
+            <p class="img">
+              <img
+                src="../../assets/Images/Thumbnails/Bombman.png"
+                alt="샘플 이미지"
+              />
+            </p>
+            <p class="tit">물폭탄 밤밤맨</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 캡처 메뉴 end -->
+</div>

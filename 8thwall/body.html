@@ -1,0 +1,148 @@
+<a-scene
+  mediarecorder
+  landing-page
+  xrextras-gesture-detector
+  xrextras-runtime-error
+  xrextras-pause-on-hidden
+  renderer="colorManagement:true"
+  gltf-model="dracoDecoderPath: https://cdn.8thwall.com/web/aframe/draco-decoder/"
+  xrface="meshGeometry: eyes, face, mouth; maxDetections:2; allowedDevices: any; cameraDirection: front; mirroredDisplay: true"
+>
+  <!--xrface="mirroredDisplay: true;  meshGeometry: eyes, face, mouth; cameraDirection: front; allowedDevices: any; maxDetections : 2;"-->
+  <!-- //페이스 도구 -->
+  <a-assets>
+    <!-- 얼굴 아바타 -->
+    <a-asset-item
+      id="head-occluder"
+      src="./assets/Models/head-occluder.glb"
+    ></a-asset-item>
+    <!-- 판다 모자 -->
+    <a-asset-item
+      id="PubaoItem"
+      src="./assets/Models/Pubao.gltf"
+    ></a-asset-item>
+    <!-- 레니와 프렌즈 모자 -->
+    <a-asset-item
+      id="LennyAndFriendsItem"
+      src="./assets/Models/LennyAndFriends.glb"
+    ></a-asset-item>
+    <!-- 폭탄맨 모자-->
+    <a-asset-item
+      id="BombmanItem"
+      src="./assets/Models/Bombman.glb"
+    ></a-asset-item>
+  </a-assets>
+  <!--얼굴트래킹 앵커-->
+  <xrextras-faceanchor face-id="1">
+    <!-- 모자 트래킹-->
+    <a-entity class="faceTracking Pubao" visible="false">
+      <a-entity
+        gltf-model="#head-occluder"
+        position="0 0 0.02"
+        xrextras-hider-material
+      ></a-entity>
+      <xrextras-face-attachment point="noseBridge">
+        <a-entity
+          gltf-model="#PubaoItem"
+          scale="1.8 1.8 1.8"
+          position="0 0.05 0.8"
+          rotation="0 180 0"
+        >
+        </a-entity>
+      </xrextras-face-attachment>
+    </a-entity>
+    <a-entity class="faceTracking LennyAndFriends" visible="false">
+      <a-entity
+        gltf-model="#head-occluder"
+        position="0 0 0.02"
+        xrextras-hider-material
+      ></a-entity>
+      <a-entity
+        gltf-model="#LennyAndFriendsItem"
+        position="0.7 0.5 -1"
+        scale="0.13 0.13 0.13"
+        rotation="10 180 0"
+        animation-mixer="clips: [Heart03Action.006, Heart03Action.003]; loop: repeat"
+      >
+      </a-entity>
+    </a-entity>
+    <a-entity class="faceTracking Bombman" visible="false">
+      <a-entity
+        gltf-model="#head-occluder"
+        position="0 0 0.02"
+        xrextras-hider-material
+      ></a-entity>
+      <xrextras-face-attachment point="noseBridge">
+        <a-entity
+          gltf-model="#BombmanItem"
+          scale="1.9 1.9 1.9"
+          position="0 -4.3 1.3"
+          rotation="0 180 0"
+        >
+        </a-entity>
+      </xrextras-face-attachment>
+    </a-entity>
+    <!-- 얼굴 특정좌표 트래킹-->
+    <!--<a-entity id="face-attachment" visible="false"></a-entity>-->
+  </xrextras-faceanchor>
+  <!--얼굴트래킹 앵커-->
+  <xrextras-faceanchor face-id="2">
+    <!-- 모자 트래킹-->
+    <a-entity class="faceTracking Pubao" visible="false">
+      <a-entity
+        gltf-model="#head-occluder"
+        position="0 0 0.02"
+        xrextras-hider-material
+      ></a-entity>
+      <xrextras-face-attachment point="noseBridge">
+        <a-entity
+          gltf-model="#PubaoItem"
+          scale="1.8 1.8 1.8"
+          position="0 0.05 0.8"
+          rotation="0 180 0"
+        >
+        </a-entity>
+      </xrextras-face-attachment>
+    </a-entity>
+    <a-entity class="faceTracking LennyAndFriends" visible="false">
+      <a-entity
+        gltf-model="#head-occluder"
+        position="0 0 0.02"
+        xrextras-hider-material
+      ></a-entity>
+      <a-entity
+        gltf-model="#LennyAndFriendsItem"
+        position="0.7 0.5 -1"
+        scale="0.13 0.13 0.13"
+        rotation="10 180 0"
+        animation-mixer="clips: [Heart03Action.006, Heart03Action.003]; loop: repeat"
+      >
+      </a-entity>
+    </a-entity>
+    <a-entity class="faceTracking Bombman" visible="false">
+      <a-entity
+        gltf-model="#head-occluder"
+        position="0 0 0.02"
+        xrextras-hider-material
+      ></a-entity>
+      <xrextras-face-attachment point="noseBridge">
+        <a-entity
+          gltf-model="#BombmanItem"
+          scale="1.9 1.9 1.9"
+          position="0 -4.3 1.3"
+          rotation="0 180 0"
+        >
+        </a-entity>
+      </xrextras-face-attachment>
+    </a-entity>
+    <!-- 얼굴 특정좌표 트래킹-->
+    <!--<a-entity id="face-attachment" visible="false"></a-entity>-->
+  </xrextras-faceanchor>
+  <!-- 카메라 -->
+  <a-camera
+    look-controls="enabled: false"
+    wasd-controls="enabled: false"
+    position="0 1.6 0"
+  ></a-camera>
+  <!--조명-->
+</a-scene>
