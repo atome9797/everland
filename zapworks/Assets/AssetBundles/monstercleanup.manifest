@@ -1,0 +1,73 @@
+ManifestFileVersion: 0
+CRC: 1449997180
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: b21db2faef7c44ae244c64d7ed63fbe7
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: c21d61fe394c58399df3c6fb5c7c99b3
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Background/MonsterCleanup/MonsterCleanup (8).png
+- Assets/Background/MonsterCleanup/MonsterCleanup (16).png
+- Assets/Background/MonsterCleanup/MonsterCleanup (15).png
+- Assets/Background/MonsterCleanup/MonsterCleanup (9).png
+- Assets/Background/MonsterCleanup/MonsterCleanup (26).png
+- Assets/Background/MonsterCleanup/MonsterCleanup (2).png
+- Assets/Background/MonsterCleanup/MonsterCleanup (24).png
+- Assets/Background/MonsterCleanup/MonsterCleanup (6).png
+- Assets/Background/MonsterCleanup/MonsterCleanup (7).png
+- Assets/Background/MonsterCleanup/MonsterCleanup (5).png
+- Assets/Background/MonsterCleanup/MonsterCleanup (27).png
+- Assets/Background/MonsterCleanup/MonsterCleanup (53).png
+- Assets/Background/MonsterCleanup/MonsterCleanup (11).png
+- Assets/Background/MonsterCleanup/MonsterCleanup (22).png
+- Assets/Background/MonsterCleanup/MonsterCleanup (18).png
+- Assets/Background/MonsterCleanup/MonsterCleanup (25).png
+- Assets/Background/MonsterCleanup/MonsterCleanup (19).png
+- Assets/Background/MonsterCleanup/MonsterCleanup (13).png
+- Assets/Background/MonsterCleanup/MonsterCleanup (31).png
+- Assets/Background/MonsterCleanup/MonsterCleanup (44).png
+- Assets/Background/MonsterCleanup/MonsterCleanup (39).png
+- Assets/Background/MonsterCleanup/MonsterCleanup (42).png
+- Assets/Background/MonsterCleanup/MonsterCleanup (20).png
+- Assets/Background/MonsterCleanup/MonsterCleanup (37).png
+- Assets/Background/MonsterCleanup/MonsterCleanup (35).png
+- Assets/Background/MonsterCleanup/MonsterCleanup (54).png
+- Assets/Background/MonsterCleanup/MonsterCleanup (1).png
+- Assets/Background/MonsterCleanup/MonsterCleanup (36).png
+- Assets/Background/MonsterCleanup/MonsterCleanup (45).png
+- Assets/Background/MonsterCleanup/MonsterCleanup (46).png
+- Assets/Background/MonsterCleanup/MonsterCleanup (50).png
+- Assets/Background/MonsterCleanup/MonsterCleanup (10).png
+- Assets/Background/MonsterCleanup/MonsterCleanup (55).png
+- Assets/Background/MonsterCleanup/MonsterCleanup (40).png
+- Assets/Background/MonsterCleanup/MonsterCleanup (41).png
+- Assets/Background/MonsterCleanup/MonsterCleanup (34).png
+- Assets/Background/MonsterCleanup/MonsterCleanup (28).png
+- Assets/Background/MonsterCleanup/MonsterCleanup (17).png
+- Assets/Background/MonsterCleanup/MonsterCleanup (4).png
+- Assets/Background/MonsterCleanup/MonsterCleanup (33).png
+- Assets/Background/MonsterCleanup/MonsterCleanup (3).png
+- Assets/Background/MonsterCleanup/MonsterCleanup (29).png
+- Assets/Background/MonsterCleanup/MonsterCleanup (32).png
+- Assets/Background/MonsterCleanup/MonsterCleanup (30).png
+- Assets/Background/MonsterCleanup/MonsterCleanup (43).png
+- Assets/Background/MonsterCleanup/MonsterCleanup (38).png
+- Assets/Background/MonsterCleanup/MonsterCleanup (48).png
+- Assets/Background/MonsterCleanup/MonsterCleanup (52).png
+- Assets/Background/MonsterCleanup/MonsterCleanup (12).png
+- Assets/Background/MonsterCleanup/MonsterCleanup (23).png
+- Assets/Background/MonsterCleanup/MonsterCleanup (47).png
+- Assets/Background/MonsterCleanup/MonsterCleanup (21).png
+- Assets/Background/MonsterCleanup/MonsterCleanup (51).png
+- Assets/Background/MonsterCleanup/MonsterCleanup (14).png
+- Assets/Background/MonsterCleanup/MonsterCleanup (49).png
+Dependencies: []

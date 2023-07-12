@@ -1,0 +1,55 @@
+ManifestFileVersion: 0
+CRC: 4240427238
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 6e2480c85e8b33e25380ad9820cf2750
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: c21d61fe394c58399df3c6fb5c7c99b3
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Background/AmazonFilter/AmazonFilter (36).png
+- Assets/Background/AmazonFilter/AmazonFilter (35).png
+- Assets/Background/AmazonFilter/AmazonFilter (26).png
+- Assets/Background/AmazonFilter/AmazonFilter (31).png
+- Assets/Background/AmazonFilter/AmazonFilter (21).png
+- Assets/Background/AmazonFilter/AmazonFilter (34).png
+- Assets/Background/AmazonFilter/AmazonFilter (37).png
+- Assets/Background/AmazonFilter/AmazonFilter (2).png
+- Assets/Background/AmazonFilter/AmazonFilter (23).png
+- Assets/Background/AmazonFilter/AmazonFilter (20).png
+- Assets/Background/AmazonFilter/AmazonFilter (30).png
+- Assets/Background/AmazonFilter/AmazonFilter (9).png
+- Assets/Background/AmazonFilter/AmazonFilter (18).png
+- Assets/Background/AmazonFilter/AmazonFilter (6).png
+- Assets/Background/AmazonFilter/AmazonFilter (14).png
+- Assets/Background/AmazonFilter/AmazonFilter (19).png
+- Assets/Background/AmazonFilter/AmazonFilter (17).png
+- Assets/Background/AmazonFilter/AmazonFilter (13).png
+- Assets/Background/AmazonFilter/AmazonFilter (33).png
+- Assets/Background/AmazonFilter/AmazonFilter (11).png
+- Assets/Background/AmazonFilter/AmazonFilter (22).png
+- Assets/Background/AmazonFilter/AmazonFilter (10).png
+- Assets/Background/AmazonFilter/AmazonFilter (24).png
+- Assets/Background/AmazonFilter/AmazonFilter (16).png
+- Assets/Background/AmazonFilter/AmazonFilter (4).png
+- Assets/Background/AmazonFilter/AmazonFilter (15).png
+- Assets/Background/AmazonFilter/AmazonFilter (7).png
+- Assets/Background/AmazonFilter/AmazonFilter (32).png
+- Assets/Background/AmazonFilter/AmazonFilter (29).png
+- Assets/Background/AmazonFilter/AmazonFilter (12).png
+- Assets/Background/AmazonFilter/AmazonFilter (1).png
+- Assets/Background/AmazonFilter/AmazonFilter (28).png
+- Assets/Background/AmazonFilter/AmazonFilter (8).png
+- Assets/Background/AmazonFilter/AmazonFilter (25).png
+- Assets/Background/AmazonFilter/AmazonFilter (3).png
+- Assets/Background/AmazonFilter/AmazonFilter (5).png
+- Assets/Background/AmazonFilter/AmazonFilter (27).png
+Dependencies: []

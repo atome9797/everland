@@ -1,0 +1,575 @@
+<!-- Zappar WebGL template for Unity 2020 and above versions -->
+<!-- NFYNT -->
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link rel="shortcut icon" href="favicon.ico">
+    <title>everland</title>
+
+    <link rel="stylesheet" href="./assets/css/swiper.min.css">
+    <link rel="stylesheet" href="./assets/css/common.css">
+    <script src="./assets/js/swiper.min.js"></script>
+    <script src="./assets/js/lottie.min.js"></script>
+    <!-- https://airbnb.io/lottie/#/web?id=html-player-installation -->
+    
+    <style>
+        html {
+            box-sizing: border-box;
+        }
+
+        *,
+        *:before,
+        *:after {
+            box-sizing: inherit;
+        }
+
+        html,
+        body {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+
+        canvas {
+            display: block;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        #unity-container {
+            width: 100%;
+            height: 100%;
+        }
+
+        #unity-canvas {
+            width: 100%;
+            height: 100%;
+
+            background: #231F20;
+        }
+
+        #loading-cover {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #unity-loading-bar {
+            flex: 1 1 auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #unity-progress-bar-empty {
+            width: 80%;
+            height: 24px;
+            margin: 10px 20px 20px 10px;
+            text-align: left;
+            border: 1px solid white;
+            padding: 2px;
+        }
+
+        #unity-progress-bar-full {
+            width: 0%;
+            height: 100%;
+            background: white;
+        }
+
+        .light #unity-progress-bar-empty {
+            border-color: black;
+        }
+
+        .light #unity-progress-bar-full {
+            background: black;
+        }
+
+        .spinner,
+        .spinner:after {
+            border-radius: 50%;
+            width: 5em;
+            height: 5em;
+        }
+
+        .spinner {
+            margin: 10px;
+            font-size: 10px;
+            position: relative;
+            text-indent: -9999em;
+            border-top: 1.1em solid rgba(255, 255, 255, 0.2);
+            border-right: 1.1em solid rgba(255, 255, 255, 0.2);
+            border-bottom: 1.1em solid rgba(255, 255, 255, 0.2);
+            border-left: 1.1em solid #ffffff;
+            transform: translateZ(0);
+            animation: spinner-spin 1.1s infinite linear;
+        }
+
+        #captureImg {
+            width: 100%;
+            height: 100%;
+            display: none;
+            z-index : 10;
+            position: absolute;
+            background: white;
+        }
+
+        #captureVideo{
+            width: 100%;
+            height: 100%;
+            display: none;
+            z-index : 10;
+            position: absolute;
+            background: white;
+        }
+
+        #UnitySceneFrame{
+            width: 100%;
+            height: 100%;
+        }
+
+        #BackgroundImg{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            object-fit: fill;
+        }
+
+        .videoBtn{
+            position: absolute;
+            top: 90%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        #UnityAssetLoading{
+            z-index: 50;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        @keyframes spinner-spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body class="dark">
+    <div id ="UnityAssetLoading"></div>
+    <input type="hidden" id="selectCategory" name="selectCategory" value="consertAndShow">
+    <input type="hidden" id="selectTouchMenu" name="selectTouchMenu" value="test">
+    <input type="hidden" id="selectTouchType" name="selectTouchType" value="test">
+    <input type="hidden" id="cameraPosition" name="cameraPosition" value="front">
+    <input type="hidden" id="captureUrl" name="captureUrl" value="test">
+    
+    
+    <div id="loading-cover" style="display:none;">
+        <div id="unity-loading-bar">
+            <div id="unity-progress-bar-empty" style="display: none;">
+                <div id="unity-progress-bar-full"></div>
+            </div>
+            <div class="spinner"></div>
+        </div>
+    </div>
+    <div class="wrap" style = "pointer-events: none;">
+
+        <div class="top_sect" style = "pointer-events: auto;">
+            <div id="unity-container" class="unity-desktop" style="position: absolute;">
+                <img id="captureImg">
+                <video id = "captureVideo" src= "" type="video/mp4" controls autoplay></video>
+                <canvas id="unity-canvas"></canvas>
+            </div>
+
+            <!-- 상단 카메라 교체 버튼 -->
+            <button class="camera_chg_btn_type2"></button>
+
+            <!-- 로딩 애니메이션 -->
+            <div class="load_ani"></div>
+
+            <div class ="wrapMode1" style="display: none;">
+                <div class="timer_wrap recordBeforeTimer">
+                    00:00:00
+                </div>
+                <div class="timer_wrap pause recordAfterTimer" style="visibility: hidden;">
+                    00:00:00
+                </div>
+                <!-- 동영상 촬영 영역 (촬영 중) -->
+                <div class="cont_row videoBtn">
+                    <div class="rec_btn_area">
+                        <div>
+                            <!-- 촬영중일땐 pause버튼 나와야 함 -->
+                            <button class="pause_btn recordAfter" style="display: none;"></button>
+                            <!-- 촬영중아닐땐 녹화버튼 나와야 함 -->
+                            <button class="rec_btn recordBefore"></button>
+                        </div>
+                        <div>
+                            <button class="stop_btn"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="btm_sect wrapMode0" style ="pointer-events: auto;">
+            <!-- 토스트 메세지 -->
+            <!-- <div class="toast_msg">
+                동영상이 저장되었습니다.
+            </div> -->
+
+            <!-- 필터 영역 (선택영역 있을시) -->
+            <div class="cont_row" id = "select_menu0" style ="display: none;">
+                <div class="filter_list_area">
+                    <div class="left_btn_area">
+                        <button class="clear_chk_btn" onclick="effect_cancel()"></button>
+                        <button class="all_chk_btn all">All</button>
+                    </div>
+                    <ul class="filter_list">
+                        <li class = "consertAndShow" value = "0">
+                            <button id="category0">공연&쇼</button>
+                        </li>
+                        <li class = "zootopia" value = "1">
+                            <button id="category1">주토피아</button>
+                        </li>
+                        <li class = "attraction" value = "2">
+                            <button id="category2">어트렉션</button>
+                        </li>
+                        <li class = "fairyTown" value = "3">
+                            <button id="category3">페어리타운</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 상세 필터 선택영역 -->
+            <div class="cont_row" id = "select_menu1">
+                <div class="filter_detail_list_area">
+                    <ul class="swiper-wrapper">
+                        <li class="swiper-slide-css" id="item-menu0" value = "MonsterCleanup" name = "FaceTracking">
+                            <button class="item active" value="consertAndShow">
+                                <img src="./assets/images/Thumbnails/MonsterCleanup.png" alt="샘플 이미지">
+                            </button>
+                        </li>
+                        <li class="swiper-slide-css" id="item-menu1" value = "Parade" name = "FaceTracking">
+                            <button class="item" value="consertAndShow">
+                                <img src="./assets/images/Thumbnails/Parade.png" alt="샘플 이미지">
+                            </button>
+                        </li>
+                        <li class="swiper-slide-css" id="item-menu2" value = "Fireworks" name = "NoneTracking">
+                            <button class="item" value="consertAndShow">
+                                <img src="./assets/images/Thumbnails/Fireworks.png" alt="샘플 이미지">
+                            </button>
+                        </li>
+                        <li class="swiper-slide-css" id="item-menu3" value = "LennyAndFriends" name = "PlaceTracking">
+                            <button class="item" value="consertAndShow">
+                                <img src="./assets/images/Thumbnails/LennyAndFriends.png" alt="샘플 이미지">
+                            </button>
+                        </li>
+                        <li class="swiper-slide-css" id="item-menu4" value = "PandaWithPose" name = "PlaceTracking">
+                            <button class="item" value="zootopia">
+                                <img src="./assets/images/Thumbnails/PandaWithPose.png" alt="샘플 이미지">
+                            </button>
+                        </li>
+                        <li class="swiper-slide-css" id="item-menu5" value = "RedPandaWithPose" name = "PlaceTracking">
+                            <button class="item" value="zootopia">
+                                <img src="./assets/images/Thumbnails/RedPandaWithPose.png" alt="샘플 이미지">
+                            </button>
+                        </li>
+                        <li class="swiper-slide-css" id="item-menu6" value = "WalkingTiger" name = "PlaceTracking">
+                            <button class="item" value="zootopia">
+                                <img src="./assets/images/Thumbnails/WalkingTiger.png" alt="샘플 이미지">
+                            </button>
+                        </li>
+                        <li class="swiper-slide-css" id="item-menu7" value = "AmazonFilter" name = "FaceTracking">
+                            <button class="item" value="attraction">
+                                <img src="./assets/images/Thumbnails/AmazonFilter.png" alt="샘플 이미지">
+                            </button>
+                        </li>
+                        <li class="swiper-slide-css" id="item-menu8" value = "TexpressFilter" name = "FaceTracking">
+                            <button class="item" value="attraction">
+                                <img src="./assets/images/Thumbnails/TexpressFilter.png" alt="샘플 이미지">
+                            </button>
+                        </li>
+                        <li class="swiper-slide-css" id="item-menu9" value = "FairyTownFilter" name = "FaceTracking">
+                            <button class="item" value="fairyTown">
+                                <img src="./assets/images/Thumbnails/FairyTownFilter.png" alt="샘플 이미지">
+                            </button>
+                        </li>
+                        <li class="swiper-slide-css swiper-slide" id="item-menu10" value = "10" style = "visibility: hidden;">
+                            <button class="item">
+                                <img src="./assets/images/dummy/img_sample@3x.png" alt="샘플 이미지">
+                            </button>
+                        </li>
+                    </ul>
+                </div> 
+            </div>
+
+            <!-- 버튼 영역 (저장 및 공유) -->
+            <div class="cont_row captureShareMode" style ="display: block;">
+                <div class="btn_area">
+                    <div>
+                        <button class="video_chg_btn pictureMode" style ="display: block;"></button>
+                        <button class="picture_chg_btn videoMode" style ="display: none;"></button>
+                    </div>
+                    <div>
+                        <button class="picture_shoot_btn pictureMode" style ="display: block;">
+                            <i></i>
+                        </button>
+                        <button class="video_shoot_btn videoMode" style ="display: none;">
+                            <i></i>
+                        </button>
+                    </div>
+                    <div>
+                        <button class="camera_chg_btn button_position0" style ="display: block;"></button>
+                        <button class="arrow_down_btn button_position1" style ="display: none;"></button>
+                    </div>
+                </div>
+            </div> 
+
+            <div class="cont_row captureShareMode" style ="display: none;">
+                <div class="btn_area">
+                    <div>
+                        <button class="return_btn"></button>
+                    </div>
+                    <div>
+                        <button class="save_btn"></button>
+                    </div>
+                    <div>
+                        <button class="share_btn"></button>
+                    </div>
+                </div>
+            </div> 
+
+            <!-- 필터 영역 -->
+            <div class="cont_row" id = "select_menu2" style ="display: block;">
+                <div class="filter_area">
+                    <div class = "DefaultCategoryMenu consertAndShow">
+                        <p class="img">
+                            <img src="./assets/images/Thumbnails/consertAndShow.png" alt="샘플 이미지">
+                        </p>
+                        <p class="tit">
+                            공연&쇼
+                        </p>
+                    </div>
+                    <div class = "DefaultCategoryMenu zootopia">
+                        <p class="img">
+                            <img src="./assets/images/Thumbnails/zootopia.png" alt="샘플 이미지">
+                        </p>
+                        <p class="tit">
+                            주토피아
+                        </p>
+                    </div>
+                    <div class = "DefaultCategoryMenu attraction">
+                        <p class="img">
+                            <img src="./assets/images/Thumbnails/attraction.png" alt="샘플 이미지">
+                        </p>
+                        <p class="tit">
+                            어트렉션
+                        </p>
+                    </div>
+                    <div class = "DefaultCategoryMenu fairyTown">
+                        <p class="img">
+                            <img src="./assets/images/Thumbnails/fairyTown.png" alt="샘플 이미지">
+                        </p>
+                        <p class="tit">
+                            페어리타운
+                        </p>
+                    </div>
+                </div>
+            </div> 
+        </div>
+
+    </div>
+    <script type="text/javascript" src="https://libs.zappar.com/zappar-cv/2.0.1/zappar-cv.js"></script>
+    <script src="./assets/js/CameraComponent.js"></script>
+    <script src="./assets/js/MenuComponent.js"></script>
+    <script src="./assets/js/ButtonComponent.js"></script>
+    <script src="https://www.webrtc-experiment.com/RecordRTC.js"></script>
+    <script src="https://www.webrtc-experiment.com/screenshot.js"></script> 
+    <script src="vendor/jquery-1.7.1.min.js"></script>
+    <script>
+        window.useThisGithubPath = 'muaz-khan/RecordRTC';
+    </script>
+    <script src="https://www.webrtc-experiment.com/commits.js" async></script>
+    <script>
+        var swiperContainer;
+        
+        window.onload = function(){
+
+            /* 로딩 애니메이션 */
+            // lottie.loadAnimation({
+            //     container: document.querySelector('.load_ani'), 
+            //     renderer: 'svg',
+            //     loop: true,
+            //     autoplay: true,
+            //     path: './assets/animation/loading.json'
+            // });
+
+            /* 상세 필터 선택영역 스와이퍼 */
+            swiperContainer = new Swiper(".filter_detail_list_area", {
+                slidesPerView: 'auto',
+                /* loop: true, */
+            });
+            document.getElementById('select_menu1').style.display = 'none';
+        }
+
+
+        var myInstance = null;
+
+        var db = indexedDB.open("dummy_indexdb", 1); // iOS 14.6 fix; the call to open indexdb hangs forever otherwise
+
+        const buildUrl = "Build";
+        const loaderUrl = buildUrl + "/everland.loader.js";
+        const config = {
+            dataUrl: buildUrl + "/everland.data.unityweb",
+            frameworkUrl: buildUrl + "/everland.framework.js.unityweb",
+            codeUrl: buildUrl + "/everland.wasm.unityweb",
+            streamingAssetsUrl: "StreamingAssets",
+            companyName: "DefaultCompany",
+            productName: "everland",
+            productVersion: "0.1",
+            //Useful when used along with Filename as Hashes option
+            cacheControl: function (url) {
+                // typically includes: .data, .bundle, .zpt
+                if (url.match(/\.data/) || url.match(/\.bundle/) || url.match(/\.zpt/)) {
+                    return "must-revalidate";
+                }
+
+                if (url.match(/\.mp4/) || url.match(/\.custom/) || url.match(/\.zbin/)) {
+                    return "immutable";
+                }
+                // Disable explicit caching for all other files.
+                // Note: the default browser cache may cache them anyway.
+                return "no-store";
+            },
+        };
+
+        const container = document.querySelector("#unity-container");
+        const canvas = document.querySelector("#unity-canvas");
+        const loadingCover = document.querySelector("#loading-cover");
+        const progressBarEmpty = document.querySelector("#unity-progress-bar-empty");
+        const progressBarFull = document.querySelector("#unity-progress-bar-full");
+        const spinner = document.querySelector('.spinner');
+
+        if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+            container.className = "unity-mobile";
+            //config.matchWebGLToCanvasSize = false;    
+            //set devicePixelRatio=1; to avoid draining fillrate performance on mobile and override low DPI mode
+            config.devicePixelRatio = window.devicePixelRatio;
+        }
+        loadingCover.style.display = "";
+
+        window.zappar = ZCV.initialize();
+
+        const script = document.createElement("script");
+        script.src = loaderUrl;
+        //script.onload = () => { CreateUnityLoader();   };
+        document.body.appendChild(script);
+
+        window.zappar.permission_request_ui_promise().then(WaitForZCVLoad);
+
+        function WaitForZCVLoad() {
+            if (zappar.loaded()) {
+                CreateUnityLoader();
+                return;
+            }
+            setTimeout(WaitForZCVLoad, 500);
+        }
+
+        function CreateUnityLoader() {
+            createUnityInstance(canvas, config, (progress) => {
+                spinner.style.display = "none";
+                progressBarEmpty.style.display = "";
+                progressBarFull.style.width = `${100 * progress}%`;
+            }).then((unityInstance) => {
+                loadingCover.style.display = "none";
+                window.uarGameInstance = unityInstance;
+                myInstance = unityInstance;
+
+            }).catch((message) => {
+                alert(message);
+            });
+        }
+
+        //효과 취소 버튼
+        //현재 지속되고 있는 메뉴의 이름을 받고 삭제 시켜준다. => defualt 는 "" 빈 문자열로 지정한다.
+        function effect_cancel() {
+            console.log("EffectCancel Start");
+            document.getElementById('selectTouchType').setAttribute('value', 'test')
+            myInstance.SendMessage('GameManager', 'EffectCancelFunc');
+        }
+
+
+        window.requestAnimFrame = (function(){
+            return  window.requestAnimationFrame ||
+            window.webkitRequestAnimationFrame ||
+            window.mozRequestAnimationFrame    ||
+            window.oRequestAnimationFrame      ||
+            window.msRequestAnimationFrame     ||
+            function( callback ){
+                window.setTimeout(callback, 1000 / 60);
+            };
+        })();
+
+
+        // $('.rec_btn').click(function() {
+        //     console.log("속성"+canvas);
+        //     recordCanvasUsingRecordRTC(canvas);
+        // });
+
+        // RecordRTC
+        // =========
+        // function recordCanvasUsingRecordRTC(canvas) {
+        //     var recorder = RecordRTC(canvas, {
+        //         type: 'canvas',
+        //         showMousePointer: true
+        //     });
+        //     recorder.startRecording();
+        // }
+
+        // function stopRecordCanvasUsingRecordRTC(canvas){
+        //     var recorder = RecordRTC(canvas, {
+        //         type: 'canvas',
+        //         showMousePointer: true
+        //     });
+
+        //     recorder.stopRecording(function(url) {
+        //         var blob = recorder.getBlob();
+        //         console.log('blob', blob);
+
+        //         var video = document.createElement('video');
+        //         video.src = URL.createObjectURL(blob);
+        //         video.setAttribute('style', 'height: 100%; position: absolute; top:0;');
+        //         var body = document.querySelector('body');
+        //         body.innerHTML = '';
+        //         body.appendChild(video);
+        //         video.controls = true;
+        //         video.play();
+        //     });
+        // }
+
+    </script>
+
+</body>
+
+</html>

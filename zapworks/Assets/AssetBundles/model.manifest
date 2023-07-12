@@ -1,0 +1,52 @@
+ManifestFileVersion: 0
+CRC: 2809508544
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 51d899d02d0ccb89e02d65f049b74a55
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 735171170ace2db378e0a9c2054b241e
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 33
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 74
+  Script: {instanceID: 0}
+- Class: 111
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: 69e8ad190e80fd540afdb1b01ab4ff8b, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 137
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Models/Parade/Parade3D.prefab
+- Assets/Models/FairyTownFilter/FairyTownFilter3D.prefab
+- Assets/Models/LennyAndFriends/Animations/LennyAndFriends.anim
+- Assets/Models/MonsterCleanup/MonsterCleanup3D.prefab
+- Assets/Models/RedPandaWithPose/Animations/RedPandaWithPose.anim
+- Assets/Models/PandaWithPose/Animations/PandaWithPose.anim
+- Assets/Models/RedPandaWithPose/RedPandaWithPose3D.prefab
+- Assets/Models/WalkingTiger/WalkingTiger3D.prefab
+- Assets/Models/LennyAndFriends/LennyAndFriends3D.prefab
+- Assets/Models/FairyTownFilter/Animations/FairyTownFilter.anim
+- Assets/Models/WalkingTiger/Animations/WalkingTiger.anim
+- Assets/Models/PandaWithPose/PandaWithPose3D.prefab
+Dependencies: []

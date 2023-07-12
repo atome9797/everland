@@ -1,0 +1,93 @@
+ManifestFileVersion: 0
+CRC: 2866527210
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 09b490a592c6b0016b35e685209b5543
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: c21d61fe394c58399df3c6fb5c7c99b3
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Background/Parade/Parade (71).png
+- Assets/Background/Parade/Parade (1).png
+- Assets/Background/Parade/Parade (6).png
+- Assets/Background/Parade/Parade (2).png
+- Assets/Background/Parade/Parade (4).png
+- Assets/Background/Parade/Parade (33).png
+- Assets/Background/Parade/Parade (29).png
+- Assets/Background/Parade/Parade (12).png
+- Assets/Background/Parade/Parade (41).png
+- Assets/Background/Parade/Parade (63).png
+- Assets/Background/Parade/Parade (27).png
+- Assets/Background/Parade/Parade (61).png
+- Assets/Background/Parade/Parade (60).png
+- Assets/Background/Parade/Parade (72).png
+- Assets/Background/Parade/Parade (45).png
+- Assets/Background/Parade/Parade (39).png
+- Assets/Background/Parade/Parade (74).png
+- Assets/Background/Parade/Parade (55).png
+- Assets/Background/Parade/Parade (64).png
+- Assets/Background/Parade/Parade (26).png
+- Assets/Background/Parade/Parade (57).png
+- Assets/Background/Parade/Parade (37).png
+- Assets/Background/Parade/Parade (32).png
+- Assets/Background/Parade/Parade (13).png
+- Assets/Background/Parade/Parade (75).png
+- Assets/Background/Parade/Parade (24).png
+- Assets/Background/Parade/Parade (28).png
+- Assets/Background/Parade/Parade (70).png
+- Assets/Background/Parade/Parade (7).png
+- Assets/Background/Parade/Parade (19).png
+- Assets/Background/Parade/Parade (9).png
+- Assets/Background/Parade/Parade (3).png
+- Assets/Background/Parade/Parade (42).png
+- Assets/Background/Parade/Parade (23).png
+- Assets/Background/Parade/Parade (50).png
+- Assets/Background/Parade/Parade (5).png
+- Assets/Background/Parade/Parade (8).png
+- Assets/Background/Parade/Parade (44).png
+- Assets/Background/Parade/Parade (21).png
+- Assets/Background/Parade/Parade (67).png
+- Assets/Background/Parade/Parade (18).png
+- Assets/Background/Parade/Parade (47).png
+- Assets/Background/Parade/Parade (66).png
+- Assets/Background/Parade/Parade (49).png
+- Assets/Background/Parade/Parade (56).png
+- Assets/Background/Parade/Parade (30).png
+- Assets/Background/Parade/Parade (38).png
+- Assets/Background/Parade/Parade (16).png
+- Assets/Background/Parade/Parade (53).png
+- Assets/Background/Parade/Parade (43).png
+- Assets/Background/Parade/Parade (68).png
+- Assets/Background/Parade/Parade (15).png
+- Assets/Background/Parade/Parade (51).png
+- Assets/Background/Parade/Parade (52).png
+- Assets/Background/Parade/Parade (69).png
+- Assets/Background/Parade/Parade (46).png
+- Assets/Background/Parade/Parade (40).png
+- Assets/Background/Parade/Parade (10).png
+- Assets/Background/Parade/Parade (65).png
+- Assets/Background/Parade/Parade (36).png
+- Assets/Background/Parade/Parade (59).png
+- Assets/Background/Parade/Parade (34).png
+- Assets/Background/Parade/Parade (11).png
+- Assets/Background/Parade/Parade (54).png
+- Assets/Background/Parade/Parade (62).png
+- Assets/Background/Parade/Parade (35).png
+- Assets/Background/Parade/Parade (31).png
+- Assets/Background/Parade/Parade (58).png
+- Assets/Background/Parade/Parade (14).png
+- Assets/Background/Parade/Parade (22).png
+- Assets/Background/Parade/Parade (20).png
+- Assets/Background/Parade/Parade (25).png
+- Assets/Background/Parade/Parade (17).png
+- Assets/Background/Parade/Parade (73).png
+- Assets/Background/Parade/Parade (48).png
+Dependencies: []

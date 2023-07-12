@@ -1,0 +1,93 @@
+ManifestFileVersion: 0
+CRC: 757800650
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 1c4a8541386255c58ce7f8ce167e3315
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: c21d61fe394c58399df3c6fb5c7c99b3
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Background/Fireworks/Fireworks (61).png
+- Assets/Background/Fireworks/Fireworks (58).png
+- Assets/Background/Fireworks/Fireworks (36).png
+- Assets/Background/Fireworks/Fireworks (65).png
+- Assets/Background/Fireworks/Fireworks (24).png
+- Assets/Background/Fireworks/Fireworks (66).png
+- Assets/Background/Fireworks/Fireworks (43).png
+- Assets/Background/Fireworks/Fireworks (53).png
+- Assets/Background/Fireworks/Fireworks (21).png
+- Assets/Background/Fireworks/Fireworks (17).png
+- Assets/Background/Fireworks/Fireworks (37).png
+- Assets/Background/Fireworks/Fireworks (57).png
+- Assets/Background/Fireworks/Fireworks (6).png
+- Assets/Background/Fireworks/Fireworks (19).png
+- Assets/Background/Fireworks/Fireworks (73).png
+- Assets/Background/Fireworks/Fireworks (75).png
+- Assets/Background/Fireworks/Fireworks (56).png
+- Assets/Background/Fireworks/Fireworks (31).png
+- Assets/Background/Fireworks/Fireworks (25).png
+- Assets/Background/Fireworks/Fireworks (49).png
+- Assets/Background/Fireworks/Fireworks (33).png
+- Assets/Background/Fireworks/Fireworks (3).png
+- Assets/Background/Fireworks/Fireworks (42).png
+- Assets/Background/Fireworks/Fireworks (68).png
+- Assets/Background/Fireworks/Fireworks (63).png
+- Assets/Background/Fireworks/Fireworks (20).png
+- Assets/Background/Fireworks/Fireworks (15).png
+- Assets/Background/Fireworks/Fireworks (52).png
+- Assets/Background/Fireworks/Fireworks (70).png
+- Assets/Background/Fireworks/Fireworks (28).png
+- Assets/Background/Fireworks/Fireworks (34).png
+- Assets/Background/Fireworks/Fireworks (71).png
+- Assets/Background/Fireworks/Fireworks (9).png
+- Assets/Background/Fireworks/Fireworks (14).png
+- Assets/Background/Fireworks/Fireworks (35).png
+- Assets/Background/Fireworks/Fireworks (2).png
+- Assets/Background/Fireworks/Fireworks (23).png
+- Assets/Background/Fireworks/Fireworks (4).png
+- Assets/Background/Fireworks/Fireworks (39).png
+- Assets/Background/Fireworks/Fireworks (16).png
+- Assets/Background/Fireworks/Fireworks (30).png
+- Assets/Background/Fireworks/Fireworks (62).png
+- Assets/Background/Fireworks/Fireworks (64).png
+- Assets/Background/Fireworks/Fireworks (46).png
+- Assets/Background/Fireworks/Fireworks (32).png
+- Assets/Background/Fireworks/Fireworks (72).png
+- Assets/Background/Fireworks/Fireworks (41).png
+- Assets/Background/Fireworks/Fireworks (5).png
+- Assets/Background/Fireworks/Fireworks (47).png
+- Assets/Background/Fireworks/Fireworks (1).png
+- Assets/Background/Fireworks/Fireworks (74).png
+- Assets/Background/Fireworks/Fireworks (8).png
+- Assets/Background/Fireworks/Fireworks (48).png
+- Assets/Background/Fireworks/Fireworks (40).png
+- Assets/Background/Fireworks/Fireworks (26).png
+- Assets/Background/Fireworks/Fireworks (55).png
+- Assets/Background/Fireworks/Fireworks (67).png
+- Assets/Background/Fireworks/Fireworks (27).png
+- Assets/Background/Fireworks/Fireworks (11).png
+- Assets/Background/Fireworks/Fireworks (38).png
+- Assets/Background/Fireworks/Fireworks (10).png
+- Assets/Background/Fireworks/Fireworks (51).png
+- Assets/Background/Fireworks/Fireworks (12).png
+- Assets/Background/Fireworks/Fireworks (29).png
+- Assets/Background/Fireworks/Fireworks (22).png
+- Assets/Background/Fireworks/Fireworks (50).png
+- Assets/Background/Fireworks/Fireworks (59).png
+- Assets/Background/Fireworks/Fireworks (7).png
+- Assets/Background/Fireworks/Fireworks (45).png
+- Assets/Background/Fireworks/Fireworks (13).png
+- Assets/Background/Fireworks/Fireworks (60).png
+- Assets/Background/Fireworks/Fireworks (69).png
+- Assets/Background/Fireworks/Fireworks (44).png
+- Assets/Background/Fireworks/Fireworks (18).png
+- Assets/Background/Fireworks/Fireworks (54).png
+Dependencies: []

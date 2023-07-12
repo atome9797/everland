@@ -1,0 +1,28 @@
+ManifestFileVersion: 0
+CRC: 2874406124
+AssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: model
+      Dependencies: {}
+    Info_1:
+      Name: amazonfilter
+      Dependencies: {}
+    Info_2:
+      Name: fairytownfilter
+      Dependencies: {}
+    Info_3:
+      Name: fireworks
+      Dependencies: {}
+    Info_4:
+      Name: lennyandfriends
+      Dependencies: {}
+    Info_5:
+      Name: monstercleanup
+      Dependencies: {}
+    Info_6:
+      Name: parade
+      Dependencies: {}
+    Info_7:
+      Name: texpressfilter
+      Dependencies: {}
